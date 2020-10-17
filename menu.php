@@ -1,6 +1,5 @@
 <?php
 ?>
-
 <!DOCTYPE html>
 <html lang="sk">
 
@@ -41,37 +40,32 @@
                 <a class="nav-link" href="pohare.php">Poháre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kontakt <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="Kontakt.php">Kontakt</a>
             </li>
         </ul>
     </div>
 </nav>
 
-
-<div class="otvaHodiny">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <h1>
-                    Otváracie hodiny:
-                </h1>
-                <p class="text-center">
-                    PO : 9.00 - 22.00  <br>
-                    UT : 9.00 - 22.00 <br>
-                    ST : 9.00 - 22.00  <br>
-                    ST : 9.00 - 22.00 <br>
-                    PIA : 9.00 - 00.00  <br>
-                    SO : 9.00 - 23.00 <br>
-                    NE : 9.00 - 22.00  <br>
-                </p>
-            </div>
-            <div class="col-6">
-                <img src="pohárik.jpg" alt="..." class="rounded float-right img-fluid">
-            </div>
+<div class="container">
+    <div class="row">
+        <img src="Mazak.png" alt="..." class="rounded mx-auto d-block img-fluid">
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <h2 class="text-center">
+            Mazák | Single Hop Sabro | CZE
+        </h2>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <p class="text-center">
+            American Pale Ale | 13° | 5,5% ABV
+        </p>
+    </div>
     </div>
 </div>
 

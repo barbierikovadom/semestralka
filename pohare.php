@@ -35,7 +35,7 @@
                 <a class="nav-link" href="#">Poháre <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="menu.php">Menu</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="kontakt.php">Kontakt</a>
