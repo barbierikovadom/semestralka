@@ -13,13 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="uvodna_strana.css">
-</head>
+</head
 <body>
+
+<!--footer-->
+<div class="footer">
+    <p>Dominika Web Design, Copyright &copy; 2020</p>
+</div>
 
 <img src="obloha.jpg" class="img-fluid" alt="Responsive image">
 
+<!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
-    <a class="navbar-brand" href="#">Piváreň u nás</a>
+    <a class="navbar-brand" href="uvodna_strana.php">Piváreň u nás</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,13 +35,13 @@
                 <a class="nav-link" href="#">O nás <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pohare.html">Poháre</a>
+                <a class="nav-link" href="pohare.php">Poháre</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kontakt</a>
+                <a class="nav-link" href="kontakt.php">Kontakt</a>
             </li>
         </ul>
 
@@ -69,5 +75,5 @@
         </div>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
