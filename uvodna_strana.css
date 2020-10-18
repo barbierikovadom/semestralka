@@ -25,3 +25,11 @@ body{
     color: white;
     text-align: center;
 }
+
+.piva img {
+    width: 200px;
+}
+
+.piva h1 {
+    font-size: 60px ;
+}

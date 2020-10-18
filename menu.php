@@ -19,9 +19,9 @@
 <body>
 
 <!--footer-->
-<div class="footer">
-    <p>Dominika Web Design, Copyright &copy; 2020</p>
-</div>
+<!--<div class="footer">-->
+<!--    <p>Dominika Web Design, Copyright &copy; 2020</p>-->
+<!--</div>-->
 
 <img src="obloha.jpg" class="img-fluid" alt="Responsive image">
 
@@ -49,23 +49,49 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <img src="Mazak.png" alt="..." class="rounded mx-auto d-block img-fluid">
-    </div>
-    <div class="row">
-        <div class="col-12">
-        <h2 class="text-center">
-            Mazák | Single Hop Sabro | CZE
-        </h2>
+
+<div class="piva">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">
+                    Čapujeme:
+                </h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-        <p class="text-center">
-            American Pale Ale | 13° | 5,5% ABV
-        </p>
-    </div>
+        <?php
+            $capujeme = fopen("capujeme.txt", "r") or die("Unable to open file!");
+            $piva = fopen("piva.txt", "r") or die("Unable to open file!");
+            $obrazky = fopen("obrazky.txt", "r") or die("Unable to open file!");
+            while(!feof($capujeme)) {
+        ?>
+        <div class="row">
+            <img src="<?php echo fgets($obrazky)?>" alt="..." class="rounded mx-auto d-block img-fluid">
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">
+                    <?php
+                        echo fgets($piva)
+                    ?>
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center">
+                    <?php
+                        echo fgets($capujeme)
+                    ?>
+                </p>
+            </div>
+        </div>
+         <?php
+            }
+            fclose($capujeme);
+            fclose($piva);
+            fclose($obrazky);
+         ?>
     </div>
 </div>
 
