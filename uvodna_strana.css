@@ -1,6 +1,6 @@
 h1{
     font-family: 'Sansita Swashed', cursive;
-    color: goldenrod;
+    color: #DAA520;
     font-size: 40px;
 }
 
@@ -9,7 +9,7 @@ p{
 }
 
 body{
-    background-color: grey !important;
+    background-color: #808080 !important;
 }
 
 .container{
@@ -32,4 +32,8 @@ body{
 
 .piva h1 {
     font-size: 60px ;
+}
+
+.pohare img{
+    width: 100px;
 }
