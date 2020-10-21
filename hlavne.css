@@ -1,0 +1,104 @@
+h1{
+    font-family: 'Sansita Swashed', cursive;
+    color: #DAA520;
+    font-size: 40px;
+}
+
+p{
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+body{
+    background-color: #808080 !important;
+}
+
+.nazov{
+    font-size: 20px !important;
+    padding: 5px;
+    border: solid 2px white;
+}
+
+.stranky{
+    font-size: 15px;
+    text-align: center;
+}
+
+.container{
+    background-color: white;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+
+}
+
+.piva img {
+    width: 200px;
+}
+
+.pohare img{
+    width: 100px;
+}
+
+.otvaHodiny p{
+    font-size: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1050px){
+    .col-3 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+    .col-8 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+    .col-9 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+
+    .piva img{
+        width: 120px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .stranky{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .nazov{
+        font-size: 25px !important;
+    }
+}
