@@ -5,8 +5,7 @@ h1{
 }
 
 p{
-    font-family: 'Tenor Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 body{
@@ -15,7 +14,7 @@ body{
 
 .nazov{
     font-size: 20px !important;
-    padding: 5px;
+    padding: 3px;
     border: solid 2px white;
 }
 
@@ -28,16 +27,19 @@ body{
     background-color: white;
 }
 
+
 .footer{
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: gray;
+    background-color: grey;
     color: white;
     text-align: center;
-
+    /*z-index: 0;*/
+    /*padding-top: 10px;*/
 }
+
 
 .piva img {
     width: 200px;
@@ -59,76 +61,51 @@ body{
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 1000px){
     .col-3 {
         width: 100%;
         max-width: 100%;
         flex: 100%;
     }
 
+    /*.col-4 {*/
+    /*    width: 100% !important;*/
+    /*    max-width: 100% !important;*/
+    /*    flex: 100% !important;*/
+    /*}*/
+
     .col-6 {
         width: 100%;
         max-width: 100%;
         flex: 100%;
     }
+
     .col-8 {
         width: 100%;
         max-width: 100%;
         flex: 100%;
     }
+
     .col-9 {
         width: 100%;
         max-width: 100%;
         flex: 100%;
     }
 
-    h2{
-        font-size: 18px;
+    .nazov{
+        font-size: 25px !important;
     }
 
-    .piva img{
-        width: 70px;
-    }
-
-    p{
-        font-size: 18px;
-    }
-
-    .otvaHodiny p{
+    .stranky a{
         font-size: 20px !important;
-    }
-}
-
-
-@media only screen and (min-width: 500px) and (max-width: 1050px){
-    .col-3 {
-        width: 100%;
-        max-width: 100%;
-        flex: 100%;
-    }
-
-    .col-6 {
-        width: 100%;
-        max-width: 100%;
-        flex: 100%;
-    }
-    .col-8 {
-        width: 100%;
-        max-width: 100%;
-        flex: 100%;
-    }
-    .col-9 {
-        width: 100%;
-        max-width: 100%;
-        flex: 100%;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 45px;
     }
 
     h2{
-        font-size: 16px;
+        font-size: 25px !important;
     }
 
     .piva img{
@@ -137,6 +114,22 @@ body{
 
     p{
         font-size: 16px;
+    }
+
+    .footer p{
+        font-size: 16px;
+    }
+
+    .otvaHodiny p{
+        font-size: 16px;
+    }
+
+    .otvaHodiny img{
+        width: 300px !important;
+    }
+
+    .carousel-control-prev{
+        color:aqua !important;
     }
 }
 

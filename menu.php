@@ -17,6 +17,7 @@
 <body>
 
 <!--footer-->
+
 <div class="footer">
     <p>Dominika Web Design, Copyright &copy; 2020</p>
 </div>
@@ -38,7 +39,7 @@
 <!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
     <a class="navbar-brand" href="#">
-        <img src="logo.png" width="50" height="50" alt="" loading="lazy">
+        <img src="logo.png" width="35" height="35" alt="" loading="lazy">
     </a>
     <a class="navbar-brand nazov" href="uvodna_strana.html">Piváreň u nás</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +68,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <br>
                 <h1 class="text-center">
                     Čapujeme:
                 </h1>
@@ -106,6 +108,9 @@
             fclose($obrazky);
          ?>
     </div>
+    <br>
+    <br>
+    <br>
 </div>
 
 </body>
