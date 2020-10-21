@@ -6,6 +6,7 @@ h1{
 
 p{
     font-family: 'Tenor Sans', sans-serif;
+    font-size: 12px;
 }
 
 body{
@@ -18,7 +19,7 @@ body{
     border: solid 2px white;
 }
 
-.stranky{
+.stranky a{
     font-size: 15px;
     text-align: center;
 }
@@ -42,6 +43,10 @@ body{
     width: 200px;
 }
 
+.piva h2{
+    font-size: 18px;
+}
+
 .pohare img{
     width: 100px;
 }
@@ -54,7 +59,48 @@ body{
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 1050px){
+@media only screen and (max-width: 500px){
+    .col-3 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+    .col-8 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+    .col-9 {
+        width: 100%;
+        max-width: 100%;
+        flex: 100%;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    .piva img{
+        width: 70px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    .otvaHodiny p{
+        font-size: 20px !important;
+    }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 1050px){
     .col-3 {
         width: 100%;
         max-width: 100%;
@@ -82,23 +128,15 @@ body{
     }
 
     h2{
-        font-size: 22px;
+        font-size: 16px;
     }
 
     .piva img{
         width: 120px;
     }
 
-    p {
-        font-size: 20px;
-    }
-
-    .stranky{
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .nazov{
-        font-size: 25px !important;
+    p{
+        font-size: 16px;
     }
 }
+
