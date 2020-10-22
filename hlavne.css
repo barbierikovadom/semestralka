@@ -27,19 +27,20 @@ body{
     background-color: white;
 }
 
-
 .footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: grey;
-    color: white;
-    text-align: center;
-    /*z-index: 0;*/
-    /*padding-top: 10px;*/
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*background-color: grey;*/
+    /*color: white;*/
+    /*text-align: center;*/
+    /*!*z-index: 0;*!*/
+    /*!*padding-top: 10px;*!*/
+/*    bottom: 0;*/
+/*    flex-shrink: none;*/
+   height: 20px;
 }
-
 
 .piva img {
     width: 200px;
@@ -67,12 +68,6 @@ body{
         max-width: 100%;
         flex: 100%;
     }
-
-    /*.col-4 {*/
-    /*    width: 100% !important;*/
-    /*    max-width: 100% !important;*/
-    /*    flex: 100% !important;*/
-    /*}*/
 
     .col-6 {
         width: 100%;
@@ -126,10 +121,6 @@ body{
 
     .otvaHodiny img{
         width: 300px !important;
-    }
-
-    .carousel-control-prev{
-        color:aqua !important;
     }
 }
 

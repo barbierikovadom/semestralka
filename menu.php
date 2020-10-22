@@ -17,12 +17,13 @@
 <body>
 
 <!--footer-->
+<footer class="footer fixed-bottom">
+    <div class="container text-center">
+        <p>Dominika Web Design, Copyright &copy; 2020</p>
+    </div>
+</footer>
 
-<div class="footer">
-    <p>Dominika Web Design, Copyright &copy; 2020</p>
-</div>
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<header id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="obrazkyUvod/chmel.jpg" alt="budova podniku">
@@ -34,7 +35,7 @@
             <img class="d-block w-100" src="obrazkyUvod/slide-03.jpg" alt="výčap spredu">
         </div>
     </div>
-</div>
+</header>
 
 <!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
@@ -107,9 +108,9 @@
             fclose($piva);
             fclose($obrazky);
          ?>
+        <br>
+        <br>
     </div>
-    <br>
-    <br>
     <br>
 </div>
 
