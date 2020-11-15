@@ -28,17 +28,6 @@ body{
 }
 
 .footer{
-    /*position: fixed;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
-    /*background-color: grey;*/
-    /*color: white;*/
-    /*text-align: center;*/
-    /*!*z-index: 0;*!*/
-    /*!*padding-top: 10px;*!*/
-/*    bottom: 0;*/
-/*    flex-shrink: none;*/
    height: 20px;
 }
 
@@ -122,5 +111,17 @@ body{
     .otvaHodiny img{
         width: 300px !important;
     }
+}
+
+a:link{
+    color: white;
+}
+
+a:hover{
+    color: pink;
+}
+
+a:visited{
+    color: yellow;
 }
 
