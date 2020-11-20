@@ -114,7 +114,7 @@ body{
 }
 
 a:link{
-    color: white;
+    color: darkblue;
 }
 
 a:hover{
@@ -122,6 +122,9 @@ a:hover{
 }
 
 a:visited{
-    color: yellow;
+    color: red;
 }
 
+.registrovanie{
+    font-size:13px;
+}

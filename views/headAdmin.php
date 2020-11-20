@@ -17,7 +17,7 @@
 <!--footer-->
 <footer class="fixed-bottom">
     <div class="footer container text-center">
-        <p>Dominika Web Design, Copyright &copy; 2020</p>
+        <p>Dominika Web Design, Copyright 2020</p>
     </div>
 </footer>
 
@@ -38,7 +38,7 @@
 <!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="#">
-        <img src="../images/logo.png" width="35" height="35" alt="" loading="lazy">
+        <img src="../../../images/logo.png" width="35" height="35" alt="" loading="lazy">
     </a>
     <a class="navbar-brand nazov" href="uvodna_strana.html">Piváreň u nás</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,14 +46,41 @@
     </button>
     <div class="collapse navbar-collapse stranky" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="registracia.php">Registrácia</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="uvodna_strana.php">O nás</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="prihlasenie.php">Prihlasenie</a>
+                <a class="nav-link" href="pohare.php">Poháre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="menu.php">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kontakt.php">Kontakt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="vsetkyRezervacie.php">vsetkyRezervacie</a>
             </li>
         </ul>
 
+        <ul class="navbar-nav my-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nastavenia menu</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Zrušenie prvku menu</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nastavenia účtu</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="zrusenieUctu.php">Zrušenie účtu</a>
+                    <a class="dropdown-item" href="zmenaHesla.php">Zmena hesla</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="odhlasenie.php">Odhlásiť sa</a>
+            </li>
+        </ul>
     </div>
 </nav>
 

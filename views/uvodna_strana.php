@@ -1,10 +1,25 @@
 <?php
-    include 'root.layout.view.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+
+if($_SESSION['meno'] == null){
+    header("LOCATION: prihlasenie.php");
+} else {
+    $_POST['meno'] = $_SESSION['meno'];
+    if ($_POST['meno'] == 'admin') {
+        include 'headAdmin.php';
+    } else {
+        include 'headPrihlaseny.php';
+    }
+}
 ?>
 
-<title>O nás</title>
-
 <html>
+
+<title>O nás</title>
+<body>
 <div class="obsah">
 <div class="container">
     <div class="row">

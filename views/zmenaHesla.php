@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 include "../databaza/databaza.php";
-include "root.layout.view.php";
+include "headPrihlaseny.php";
 
 $databaza = new databaza();
 $_POST['meno'] = $_SESSION['meno'];
@@ -15,13 +15,8 @@ if(isset($_POST['heslo'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
     <title>Zmena hesla</title>
-</head>
 <body>
 <div class="karta" style="text-align: center">
     <form id="login" method="post">

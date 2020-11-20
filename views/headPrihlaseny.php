@@ -17,7 +17,7 @@
 <!--footer-->
 <footer class="fixed-bottom">
     <div class="footer container text-center">
-        <p>Dominika Web Design, Copyright &copy; 2020</p>
+        <p>Dominika Web Design, Copyright 2020</p>
     </div>
 </footer>
 
@@ -58,6 +58,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="kontakt.php">Kontakt</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rezervácie</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="vytvorenieRezervacie.php">Vytvoriť novú rezerváciu</a>
+                    <a class="dropdown-item" href="vsetkyRezervacie.php">Všetky rezervácie</a>
+                </div>
+            </li>
         </ul>
 
         <ul class="navbar-nav my-lg-0">
@@ -74,10 +81,6 @@
         </ul>
     </div>
 </nav>
-
-<!--<div class="web-content">-->
-<!--    --><?//= $contentHTML ?>
-<!--</div>-->
 
 </body>
 </html>
