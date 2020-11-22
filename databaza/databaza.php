@@ -36,7 +36,9 @@ class databaza
     function zmenaHesla($login, $heslo){
         $hashHeslo = password_hash($heslo, PASSWORD_DEFAULT);
         $sql = "UPDATE semestralka.pouzivatelia SET heslo = '$hashHeslo' WHERE login = '$login'";
-        $this->pripojenie->query($sql);
+        if ($this->pripojenie->query($sql) === TRUE) {
+            header("LOCATION: ../views/prihlasenie.php");
+        }
     }
 
     function odstranenieUctu($login){
@@ -61,14 +63,14 @@ class databaza
 
     function kontrolaRegistracie($login, $priezvisko, $email, $heslo){
         $sql = "SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = '$login'";
+        $sql2 = "SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.email = '$email'";
         $vysledok = $this->pripojenie->query($sql);
-        if ($vysledok->num_rows === 0) {
+        $vysledok2 = $this->pripojenie->query($sql2);
+        if ($vysledok->num_rows === 0 && $vysledok2->num_rows === 0) {
             $this->registracia($login, $priezvisko, $email, $heslo);
         } else {
             echo "Uzivatel s danym menom uz existuje";
         }
-        return $vysledok;
-
     }
 
     function nacitajRezervacie($login){
