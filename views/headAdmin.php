@@ -38,7 +38,7 @@
 <!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="#">
-        <img src="../../../images/logo.png" width="35" height="35" alt="" loading="lazy">
+        <img src="../images/logo.png" width="35" height="35" alt="" loading="lazy">
     </a>
     <a class="navbar-brand nazov" href="uvodna_strana.html">Piváreň u nás</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nastavenia menu</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Zrušenie prvku menu</a>
+                    <a class="dropdown-item" href="zmenaMenu.php">Zrušenie prvku menu</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

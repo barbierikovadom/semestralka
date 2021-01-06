@@ -23,7 +23,7 @@ body{
     text-align: center;
 }
 
-.container{
+.telo{
     background-color: white;
 }
 
@@ -127,4 +127,23 @@ a:visited{
 
 .registrovanie{
     font-size:13px;
+}
+
+.tabulka{
+    color: #DAA520;
+    font-size: 120%;
+}
+
+.nadpis{
+    font-size: 200%;
+}
+
+.zrusenie{
+    font-weight: bold;
+    color: #DAA520;
+}
+
+.ucet{
+    font-size: 15px;
+    font-weight: bold;
 }

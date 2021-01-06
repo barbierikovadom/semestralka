@@ -20,7 +20,7 @@ if($_SESSION['meno'] == null){
 
 <body>
 <div class="pohare">
-    <div class="container">
+    <div class="container telo">
          <div class="row">
             <div class="col-4">
                 <br>
@@ -46,7 +46,7 @@ if($_SESSION['meno'] == null){
         </div>
     </div>
 
-<div class="container">
+<div class="container telo">
     <div class="row">
         <div class="col-8">
             <div class="row">
@@ -70,7 +70,7 @@ if($_SESSION['meno'] == null){
     </div>
 </div>
 
-<div class="container">
+<div class="container telo">
     <div class="row">
         <div class="col-4">
             <img src="../images/obrazkyPiva/Pilsner-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
@@ -95,7 +95,7 @@ if($_SESSION['meno'] == null){
     </div>
 </div>
 
-<div class="container">
+<div class="container telo">
     <div class="row">
         <div class="col-8">
             <div class="row">
@@ -119,7 +119,7 @@ if($_SESSION['meno'] == null){
     </div>
 </div>
 
-<div class="container">
+<div class="container ">
     <div class="row">
         <div class="col-4">
             <img src="../images/obrazkyPiva/Tulip-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
@@ -142,7 +142,7 @@ if($_SESSION['meno'] == null){
     </div>
 </div>
 
-<div class="container">
+<div class="container telo">
     <div class="row">
         <div class="col-8">
             <div class="row">

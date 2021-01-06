@@ -79,7 +79,7 @@ class databaza
             $stmt = $this->pripojenie->query("SELECT login, menoAPriezvisko, datum, pocetOsob FROM semestralka.pouzivatelia JOIN semestralka.rezervacia
             ON semestralka.rezervacia.idPouzivatela = semestralka.pouzivatelia.id ");
             while ($riadok = $stmt->fetch_assoc()) {
-                $prvok = new PrvokRezervacie($riadok['krsneMeno'], $riadok['priezvisko'], $riadok['datum'], $riadok['pocetOsob']);
+                $prvok = new PrvokRezervacie($riadok['login'], $riadok['menoAPriezvisko'], $riadok['datum'], $riadok['pocetOsob']);
                 $prvky[] = $prvok;
             }
         } else {

@@ -25,7 +25,7 @@ if($_SESSION['meno'] == null){
 
 <body>
 <div class="piva">
-    <div class="container">
+    <div class="container telo">
         <div class="row">
             <div class="col-12">
                 <br>

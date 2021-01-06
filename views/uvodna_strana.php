@@ -21,7 +21,7 @@ if($_SESSION['meno'] == null){
 <title>O nás</title>
 <body>
 <div class="obsah">
-<div class="container">
+<div class="container telo">
     <div class="row">
         <div class="col-9">
             <br>

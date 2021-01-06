@@ -31,7 +31,7 @@ if (isset($_POST['vytvorenieRezervacie'])) {
 <html>
 <title>Vytvorenie novej rezervácie</title>
 <body>
-<div class="container">
+<div class="container telo">
     <div class="mx-auto text-center ">
         <form method="post">
             <div>
