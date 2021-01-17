@@ -31,26 +31,24 @@ if (isset($_POST['vytvorenieRezervacie'])) {
 <html>
 <title>Vytvorenie novej rezervácie</title>
 <body>
-<div class="container telo" id="telo>
+<div class="container telo" id="telo" >
     <div class="mx-auto text-center ">
         <form method="post">
             <div>
-                <label for="Dátum" class="col-sm-2 col-form-label">Dátum</label>
-                <input type="date" id="datum" onclick="datum()" name="datum">
+                <label for="Dátum" class="col-sm-2 col-form-label" >Dátum</label>
+                <input type="date" id="datum" name="datum" min=<?php echo date("Y-m-d"); ?> max=<?php echo date('Y-m-d', strtotime('+2 years')); ?>>
             </div>
             <div>
                 <label for="Počet osôb" class="col-sm-2 col-form-label">Počet osôb</label>
-                <input type="number" id="pocetOsob" name="pocetOsob">
+                <input type="number" id="pocetOsob" min="1" max="5" name="pocetOsob">
             </div>
                 <input type="submit" class="btn btn-success" id="vytvorenieRezervacie" name="vytvorenieRezervacie" value="vytvorenieRezervacie">
             </div>
         </form>
+    <br>
     </div>
-
 </div>
 </body>
-<script src="../ajax.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </html>
 
 

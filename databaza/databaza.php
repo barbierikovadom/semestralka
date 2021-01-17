@@ -15,39 +15,52 @@ class databaza
     function registracia($login, $priezvisko, $email, $heslo)
     {
         $hash_heslo = password_hash($heslo, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO semestralka.pouzivatelia (login, menoAPriezvisko, email, heslo) VALUES ('$login','$priezvisko', '$email', '$hash_heslo')";
-        if ($this->pripojenie->query($sql) === TRUE) {
+        if( $stmt = $this->pripojenie->prepare("INSERT INTO semestralka.pouzivatelia (login, menoAPriezvisko, email, heslo) VALUES (?,?,?, '$hash_heslo')")) {
+            $stmt->bind_param("sss", $login, $priezvisko, $email);
+            $stmt->execute();
+
             header("LOCATION: ../views/prihlasenie.php");
-        } else {
-            echo "Chyba: " . $sql . "<br>" . $this->pripojenie->error;
+
+            $stmt->close();
         }
     }
 
     function prihlasenie($login)
     {
-        $sql = "SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = '$login'";
-        $vysledok = $this->pripojenie->query($sql);
-        if ($vysledok->num_rows === 0) {
-            echo "Pouzivatel nenajdeny!";
+        if( $stmt = $this->pripojenie->prepare("SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            if ($result->num_rows === 0) {
+                echo "Pouzivatel nenajdeny!";
+            }
+            $stmt->close();
+            return $result;
         }
-        return $vysledok;
     }
 
     function zmenaHesla($login, $heslo){
         $hashHeslo = password_hash($heslo, PASSWORD_DEFAULT);
-        $sql = "UPDATE semestralka.pouzivatelia SET heslo = '$hashHeslo' WHERE login = '$login'";
-        if ($this->pripojenie->query($sql) === TRUE) {
+        if( $stmt = $this->pripojenie->prepare("UPDATE semestralka.pouzivatelia SET heslo = '$hashHeslo' WHERE login = ?")) {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+
             header("LOCATION: ../views/prihlasenie.php");
+
+            $stmt->close();
         }
     }
 
     function odstranenieUctu($login){
-            $sql = "DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = '$login'";
-            if ($this->pripojenie->query($sql) === TRUE) {
-                return true;
-            } else {
-                return false;
-            }
+        if( $stmt = $this->pripojenie->prepare("DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+            $stmt->close();
+            return true;
+        }
+        return false;
     }
 
 
@@ -62,14 +75,25 @@ class databaza
     }
 
     function kontrolaRegistracie($login, $priezvisko, $email, $heslo){
-        $sql = "SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = '$login'";
-        $sql2 = "SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.email = '$email'";
-        $vysledok = $this->pripojenie->query($sql);
-        $vysledok2 = $this->pripojenie->query($sql2);
-        if ($vysledok->num_rows === 0 && $vysledok2->num_rows === 0) {
-            $this->registracia($login, $priezvisko, $email, $heslo);
-        } else {
-            echo "Uzivatel s danym menom uz existuje";
+
+        if( $stmt = $this->pripojenie->prepare("SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?") ) {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($stmt1 = $this->pripojenie->prepare("SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.email = ?")) {
+                $stmt1->bind_param("s", $email);
+                $stmt1->execute();
+                $result1 = $stmt1->get_result();
+
+                if ($result->num_rows === 0 && $result1->num_rows === 0)  {
+                    $this->registracia($login, $priezvisko, $email, $heslo);
+                    $stmt1->close();
+                } else {
+                    echo "Uzivatel s danym menom uz existuje";
+                }
+            }
+            $stmt->close();
         }
     }
 
@@ -86,10 +110,17 @@ class databaza
             $id = $this->najdiPouzivatela($login);
 
             if ($id != null) {
-                $stmt = $this->pripojenie->query("SELECT datum, pocetOsob FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ' $id '");
-                while ($riadok = $stmt->fetch_assoc()) {
-                    $prvok = new PrvokRezervacie(null, null, $riadok['datum'], $riadok['pocetOsob']);
-                    $prvky[] = $prvok;
+
+                if( $stmt = $this->pripojenie->prepare("SELECT datum, pocetOsob FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
+                    $stmt->bind_param("i", $id);
+                    $stmt->execute();
+
+                    $result = $stmt->get_result();
+                    while ($row = $result->fetch_assoc()) {
+                        $prvok = new PrvokRezervacie(null, null, $row['datum'], $row['pocetOsob']);
+                        $prvky[] = $prvok;
+                    }
+                    $stmt->close();
                 }
             }
         }
@@ -97,33 +128,71 @@ class databaza
     }
 
     function vytvorenieRezervacie($idPouzivatela, $datum, $pocetOsob){
-        $sql = "INSERT INTO semestralka.rezervacia (idPouzivatela, datum, pocetOsob) VALUES ('$idPouzivatela','$datum', '$pocetOsob')";
-        $this->pripojenie->query($sql);
+        if( $stmt = $this->pripojenie->prepare("INSERT INTO semestralka.rezervacia (idPouzivatela, datum, pocetOsob) VALUES (?,?,?)")) {
+            $stmt->bind_param("sss", $idPouzivatela, $datum, $pocetOsob);
+            $stmt->execute();
+            $stmt->close();
+        }
     }
 
-    function vymazPrvokMenu($vymazanyPrvok)
-    {
-        $sql = "DELETE from semestralka.menu WHERE  id = '" . $vymazanyPrvok . "'";
-        $this->pripojenie->query($sql);
+    function vymazPrvokMenu($vymazanyPrvok){
+        if( $stmt = $this->pripojenie->prepare("DELETE from semestralka.menu WHERE  id = ?")) {
+            $stmt->bind_param("i", $vymazanyPrvok);
+            $stmt->execute();
+            $stmt->close();
+        }
     }
 
     function pridajPrvokMenu($obrazok, $typPiva, $nazovPiva){
-        $sql = "INSERT INTO semestralka.menu (obrazok, typPiva, nazovPiva) VALUES ('$obrazok','$typPiva','$nazovPiva')";
-        $this->pripojenie->query($sql);
-    }
-
-    function zmenaPrvkuMenu($id, $obrazok, $typPiva, $nazovPiva){
-        $sql = "UPDATE semestralka.pouzivatelia SET  obrazok = '$obrazok', typPiva = '$typPiva', nazovPiva = '$nazovPiva'  WHERE id = '$id'";
-        $this->pripojenie->query($sql);
-
+       if( $stmt = $this->pripojenie->prepare("INSERT INTO semestralka.menu (obrazok, typPiva, nazovPiva) VALUES (?,?,?)")) {
+           $stmt->bind_param("sss", $obrazok, $typPiva, $nazovPiva);
+           $stmt->execute();
+           $stmt->close();
+       }
     }
 
     function najdiPouzivatela($login){
-        $sql = $this->pripojenie->query("SELECT id FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = '$login'");
-        $id = null;
-        while ($row = $sql->fetch_assoc()) {
-            $id = $row['id'];
+        if( $stmt = $this->pripojenie->prepare("SELECT id FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+            $stmt->bind_param("s", $login);
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            $id = null;
+            while ($row = $result->fetch_assoc()) {
+                $id = $row['id'];
+            }
+
+            $stmt->close();
+            return $id;
         }
-        return $id;
+    }
+
+    function nacitajPouzivatela($login){
+            if ($stmt = $this->pripojenie->prepare("SELECT * FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+                $stmt->bind_param("s", $login);
+                $stmt->execute();
+
+                $result = $stmt->get_result();
+
+
+                while ($row = $result->fetch_assoc()) {
+                    $pouzivatel = new Pouzivatel($row['login'], $row['menoAPriezvisko'], $row['email'], $row['heslo']);
+                }
+                $stmt->close();
+                return $pouzivatel;
+            }
+        }
+
+    function nacitajVsetkychPouzivatelov(){
+        $pouzivatelia = [];
+            $stmt = $this->pripojenie->query("SELECT * FROM semestralka.pouzivatelia");
+            while ($riadok = $stmt->fetch_assoc()) {
+                $pouzivatel = new Pouzivatel($riadok['login'], $riadok['menoAPriezvisko'], $riadok['email'], $riadok['heslo']);
+                $pouzivatelia[] = $pouzivatel;
+
+
+            }
+        return $pouzivatelia;
     }
 }

@@ -7,6 +7,7 @@ include '../databaza/PrvokMenu.php';
 include '../databaza/databaza.php';
 
 
+
 if($_SESSION['meno'] == null){
     header("LOCATION: prihlasenie.php");
 } else {

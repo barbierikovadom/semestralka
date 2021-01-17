@@ -10,12 +10,12 @@ $db = new Databaza();
 
 if (isset($_POST['registracia'])) {
 
-    $meno = $_POST['login'];
+    $login = $_POST['login'];
     $priezvisko = $_POST['menoAPriezvisko'];
     $email = $_POST['email'];
     $heslo = $_POST['heslo'];
 
-    $db->kontrolaRegistracie($meno, $priezvisko, $email, $heslo);
+    $db->kontrolaRegistracie($login, $priezvisko, $email, $heslo);
 }
 
 ?>
