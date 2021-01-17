@@ -55,7 +55,7 @@ class databaza
         $stmt = $this->pripojenie->query("SELECT * FROM semestralka.menu");
         $prvky=[];
         while ($row = $stmt->fetch_assoc()) {
-            $prvok = new PrvokMenu($row['typPiva'], $row['obrazok'], $row['nazovPiva']);
+            $prvok = new PrvokMenu($row['id'],$row['typPiva'], $row['obrazok'], $row['nazovPiva']);
             $prvky[] = $prvok;
         }
         return $prvky;
@@ -99,6 +99,23 @@ class databaza
     function vytvorenieRezervacie($idPouzivatela, $datum, $pocetOsob){
         $sql = "INSERT INTO semestralka.rezervacia (idPouzivatela, datum, pocetOsob) VALUES ('$idPouzivatela','$datum', '$pocetOsob')";
         $this->pripojenie->query($sql);
+    }
+
+    function vymazPrvokMenu($vymazanyPrvok)
+    {
+        $sql = "DELETE from semestralka.menu WHERE  id = '" . $vymazanyPrvok . "'";
+        $this->pripojenie->query($sql);
+    }
+
+    function pridajPrvokMenu($obrazok, $typPiva, $nazovPiva){
+        $sql = "INSERT INTO semestralka.menu (obrazok, typPiva, nazovPiva) VALUES ('$obrazok','$typPiva','$nazovPiva')";
+        $this->pripojenie->query($sql);
+    }
+
+    function zmenaPrvkuMenu($id, $obrazok, $typPiva, $nazovPiva){
+        $sql = "UPDATE semestralka.pouzivatelia SET  obrazok = '$obrazok', typPiva = '$typPiva', nazovPiva = '$nazovPiva'  WHERE id = '$id'";
+        $this->pripojenie->query($sql);
+
     }
 
     function najdiPouzivatela($login){

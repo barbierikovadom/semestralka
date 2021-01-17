@@ -31,12 +31,12 @@ if (isset($_POST['vytvorenieRezervacie'])) {
 <html>
 <title>Vytvorenie novej rezervácie</title>
 <body>
-<div class="container telo">
+<div class="container telo" id="telo>
     <div class="mx-auto text-center ">
         <form method="post">
             <div>
                 <label for="Dátum" class="col-sm-2 col-form-label">Dátum</label>
-                <input type="date" id="datum" name="datum">
+                <input type="date" id="datum" onclick="datum()" name="datum">
             </div>
             <div>
                 <label for="Počet osôb" class="col-sm-2 col-form-label">Počet osôb</label>
@@ -49,6 +49,8 @@ if (isset($_POST['vytvorenieRezervacie'])) {
 
 </div>
 </body>
+<script src="../ajax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </html>
 
 

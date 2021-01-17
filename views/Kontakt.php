@@ -19,7 +19,7 @@ if($_SESSION['meno'] == null){
 <title>Kontakt</title>
 
 <div class="otvaHodiny">
-    <div class="container telo">
+    <div class="container telo" id="telo">
         <div class="row">
             <div class="col-6">
                 <br>

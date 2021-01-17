@@ -1,7 +1,0 @@
-../images/obrazkyMenu/Mazak.png
-../images/obrazkyMenu/pohlaja.png
-../images/obrazkyMenu/general.png
-../images/obrazkyMenu/aleBrowar.png
-../images/obrazkyMenu/krikloun.png
-../images/obrazkyMenu/pinta.png
-../images/obrazkyMenu/tinyRebel.jpg

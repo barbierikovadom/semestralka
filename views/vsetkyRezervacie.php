@@ -28,7 +28,7 @@ if($_SESSION['meno'] == null){
         Všetky rezervácie:
     </h1>
 </div>
-<div class="container telo">
+<div class="container telo" id="telo">
 
     <table class="table">
         <?php
@@ -59,6 +59,7 @@ if($_SESSION['meno'] == null){
                     echo "<tr class='rezervacie'>";
                     echo "<td>" . $prvok->getDatum() . "</td>";
                     echo "<td>" . $prvok->getPocetOsob() . "</td>";
+                    echo "<tr>";
                 }
             }
         ?>

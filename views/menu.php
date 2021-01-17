@@ -25,7 +25,7 @@ if($_SESSION['meno'] == null){
 
 <body>
 <div class="piva">
-    <div class="container telo">
+    <div class="container telo" id="telo">
         <div class="row">
             <div class="col-12">
                 <br>
@@ -36,7 +36,7 @@ if($_SESSION['meno'] == null){
         </div>
         <?php foreach ($databaza->nacitanieMenu() as $prvok) { ?>
             <div class="row">
-                <img src="<?php echo $prvok->getObrazok() ?>" alt="..." class="rounded mx-auto d-block img-fluid">
+                <img name="obrazok" src="<?php echo $prvok->getObrazok() ?>" alt="..." class="rounded mx-auto d-block img-fluid">
             </div>
             <div class="row">
                 <div class="col-12">

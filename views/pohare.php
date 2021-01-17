@@ -20,11 +20,11 @@ if($_SESSION['meno'] == null){
 
 <body>
 <div class="pohare">
-    <div class="container telo">
+    <div class="container telo" id="telo">
          <div class="row">
             <div class="col-4">
                 <br>
-                <img src="../images/obrazkyPiva/american-pint-glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
+                <img name="obrazok" src="../images/obrazkyPiva/american-pint-glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
             </div>
              <div class="col-8">
             <div class="row">
@@ -44,9 +44,8 @@ if($_SESSION['meno'] == null){
                 </p>
             </div>
         </div>
-    </div>
 
-<div class="container telo">
+
     <div class="row">
         <div class="col-8">
             <div class="row">
@@ -65,15 +64,13 @@ if($_SESSION['meno'] == null){
             </p>
         </div>
         <div class="col-4">
-            <img src="../images/obrazkyPiva/Libbey-Schooner-Glass.png" alt="..." class="rounded mx-auto d-block img-fluid">
+            <img name="obrazok"  src="../images/obrazkyPiva/Libbey-Schooner-Glass.png" alt="..." class="rounded mx-auto d-block img-fluid">
         </div>
     </div>
-</div>
 
-<div class="container telo">
     <div class="row">
         <div class="col-4">
-            <img src="../images/obrazkyPiva/Pilsner-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
+            <img name="obrazok" src="../images/obrazkyPiva/Pilsner-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
         </div>
         <div class="col-8">
             <div class="row">
@@ -93,9 +90,7 @@ if($_SESSION['meno'] == null){
             </p>
         </div>
     </div>
-</div>
 
-<div class="container telo">
     <div class="row">
         <div class="col-8">
             <div class="row">
@@ -114,15 +109,13 @@ if($_SESSION['meno'] == null){
             </p>
         </div>
         <div class="col-4">
-            <img src="../images/obrazkyPiva/Thistle-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
+            <img name="obrazok" src="../images/obrazkyPiva/Thistle-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
         </div>
     </div>
-</div>
 
-<div class="container ">
     <div class="row">
         <div class="col-4">
-            <img src="../images/obrazkyPiva/Tulip-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
+            <img name="obrazok" src="../images/obrazkyPiva/Tulip-Glasses.png" alt="..." class="rounded mx-auto d-block img-fluid">
         </div>
         <div class="col-8">
             <div class="row">
@@ -140,9 +133,7 @@ if($_SESSION['meno'] == null){
             </p>
         </div>
     </div>
-</div>
 
-<div class="container telo">
     <div class="row">
         <div class="col-8">
             <div class="row">
@@ -160,7 +151,7 @@ if($_SESSION['meno'] == null){
             </p>
         </div>
         <div class="col-4">
-            <img src="../images/obrazkyPiva/Imperial%20Pint%20Glasses_sRukami.png" alt="..." class="rounded mx-auto d-block img-fluid">
+            <img name="obrazok" src="../images/obrazkyPiva/Imperial%20Pint%20Glasses_sRukami.png" alt="..." class="rounded mx-auto d-block img-fluid">
             <br>
             <br>
             <br>

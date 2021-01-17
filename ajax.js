@@ -1,47 +1,50 @@
+function tmavyRezim() {
+    document.getElementById("telo").style.backgroundColor = "#000000";
+    document.getElementById("telo").style.color = "#ffffff";
+    pohare = document.getElementsByName("obrazok");
+    for (i = 0; i < pohare.length; i++) {
+       pohare[i].style.backgroundColor = "#ffffff";
+    }
+}
+
 function odstranPrvokMenu(element) {
     var vymazanyPrvok = element;
-    $.ajax({
-        url: '',
-        type: 'POST',
-        data: {
-            funkcia: 'odstranPrvokMenu',
-            vymazanyPrvok: vymazanyPrvok,
-        }
-    }).done(function (data) {
-        zobrazStretnutia();
-    });
+    var answer = confirm ("Are you sure?");
+    if (answer){
+        $.ajax({
+            url: '',
+            type: 'POST',
+            data: {
+                funkcia: 'odstranPrvok',
+                vymazannyPrvok: vymazanyPrvok,
+            }
+        }).done(function (data) {
+            setInterval(refreshPage(), 2000);
+        });
+    }
 }
 
-function upravPrvokMenu(element) {
-    var id = element.id;
-    var noveMiesto = $('.zmenaMiesto').val();
-    var novyDatum = $('.zmenaDatum').val();
+function vytvorPrvok() {
+    var obrazok = $('#obrazok').val();
+    var nazovPiva = $('#nazovPiva').val();
+    var typPiva = $('#typPiva').val();
     $.ajax({
-        url: '',
-        type: 'POST',
+        url: "",
+        type: "POST",
         data: {
-            metoda: 'upravStretnutie',
-            id: id,
-            noveMiesto: noveMiesto,
-            novyDatum: novyDatum,
+            funkcia: 'vytvorPrvok',
+            obrazok: obrazok,
+            nazovPiva: nazovPiva,
+            typPiva : typPiva,
         },
     }).done(function (data) {
-        $('.zmenaMiesto').val("");
-        $('.zmenaDatum').val("");
-        zobrazStretnutia();
+        $('#obrazok').val("");
+        $('#nazovPiva').val("");
+        $('#typPiva').val("");
+        setInterval(refreshPage(), 1000);
     });
 }
 
-function odstranCeleMenu() {
-    var vymazaneStretnutie = element;
-    $.ajax({
-        url: '',
-        type: 'POST',
-        data: {
-            funkcia: 'odstranStretnutie',
-            vymazaneStretnutie: vymazaneStretnutie,
-        }
-    }).done(function (data) {
-        zobrazStretnutia();
-    });
+function refreshPage() {
+    location.reload();
 }

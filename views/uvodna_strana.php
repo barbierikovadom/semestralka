@@ -16,12 +16,14 @@ if($_SESSION['meno'] == null){
 }
 ?>
 
+
 <html>
 
 <title>O nás</title>
 <body>
+
 <div class="obsah">
-<div class="container telo">
+<div class="container telo" id="telo">
     <div class="row">
         <div class="col-9">
             <br>
