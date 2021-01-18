@@ -18,18 +18,38 @@ if($_SESSION['meno'] == null){
         include 'headPrihlaseny.php';
     }
 }
-?>
 
-<html>
-<title>Všetky rezervácie</title>
-<body>
+if (isset($_POST['vytvorenieRezervacie'])) {
+    $idPouzivatela = $databaza->najdiPouzivatela($_POST['meno']);
+    $datum = $_POST['datum'];
+    $pocetOsob = $_POST['pocetOsob'];
+    $databaza->vytvorenieRezervacie($idPouzivatela, $datum, $pocetOsob);
+}
+?>
 <div class="container nadpis">
     <h1 class="nadpis text-center">
         Všetky rezervácie:
     </h1>
 </div>
 <div class="container telo" id="telo">
-
+    <?php
+    if ($_POST['meno'] != 'admin') {
+    ?>
+        <br>
+        <div class="mx-auto text-center ">
+            <form method="post">
+                <label class="col-sm-2 col-form-label" >Dátum</label>
+                <input type="date" id="datum" name="datum" min=<?php echo date("Y-m-d"); ?> max=<?php echo date('Y-m-d', strtotime('+2 years')); ?>>
+                <br>
+                <label class="col-sm-2 col-form-label">Počet osôb</label>
+                <input type="number" id="pocetOsob" min="1" max="5" name="pocetOsob">
+                <br>
+                <input type="submit" class="btn btn-success" id="vytvorenieRezervacie" name="vytvorenieRezervacie" value="vytvorenieRezervacie">
+            </form>
+            <br>
+            <br>
+        </div>
+    <?php }?>
     <table class="table">
         <?php
             if ($_POST['meno'] == 'admin') {
@@ -41,6 +61,8 @@ if($_SESSION['meno'] == null){
             <th>Počet osôb</th>
         </tr>
         <?php } else { ?>
+
+
         <tr class="tabulka">
             <th>Dátum stretnutia</th>
             <th>Počet osôb</th>
@@ -59,7 +81,7 @@ if($_SESSION['meno'] == null){
                     echo "<tr class='rezervacie'>";
                     echo "<td>" . $prvok->getDatum() . "</td>";
                     echo "<td>" . $prvok->getPocetOsob() . "</td>";
-                    echo "<tr>";
+                    echo "</tr>";
                 }
             }
         ?>

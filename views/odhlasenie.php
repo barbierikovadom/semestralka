@@ -10,10 +10,6 @@ $databaza = new databaza();
 unset($_SESSION['meno']);
 session_destroy();
 ?>
-
-<html>
-    <title>Odhlásenie</title>
-<body>
 <h2 class="display-1 text-center">Úspešne si sa odhlásil!</h2>
 <div class="karta" style="text-align: center">
 

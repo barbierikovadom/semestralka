@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@800&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../hlavne.css">
+    <title>Piváreň o nás</title>
 </head>
 <body>
 
@@ -54,5 +55,3 @@
 
     </div>
 </nav>
-</body>
-</html>

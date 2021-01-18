@@ -26,10 +26,6 @@ if(isset($_POST['heslo'])) {
 }
 
 ?>
-
-<html>
-    <title>Zmena hesla</title>
-<body>
 <div class="telo container" style="text-align: center">
     <h3>Zadaj nové heslo</h3>
     <form id="login" method="post">

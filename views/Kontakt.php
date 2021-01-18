@@ -15,9 +15,6 @@ if($_SESSION['meno'] == null){
 }
 ?>
 
-<html>
-<title>Kontakt</title>
-
 <div class="otvaHodiny">
     <div class="container telo" id="telo">
         <div class="row">

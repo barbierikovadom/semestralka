@@ -11,6 +11,7 @@
 
 
     <link rel="stylesheet" href="../hlavne.css">
+    <title> Piváreň u nás </title>
 </head>
 <body>
 
@@ -58,12 +59,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="kontakt.php">Kontakt</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rezervácie</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="vytvorenieRezervacie.php">Vytvoriť novú rezerváciu</a>
-                    <a class="dropdown-item" href="vsetkyRezervacie.php">Všetky rezervácie</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="vsetkyRezervacie.php">Všetky rezervácie</a>
             </li>
         </ul>
 
@@ -72,8 +69,8 @@
                 <a class="nav-link" href="#" onclick="tmavyRezim()">Tmavý režim</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nastavenia účtu</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nastavenia účtu</a>
+                <div class="dropdown-menu">
                     <a class="dropdown-item" href="zrusenieUctu.php">Zrušenie účtu</a>
                     <a class="dropdown-item" href="zmenaHesla.php">Zmena hesla</a>
                 </div>
@@ -84,9 +81,6 @@
         </ul>
     </div>
 </nav>
-
 <script src="../ajax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
-
-</body>
-</html>

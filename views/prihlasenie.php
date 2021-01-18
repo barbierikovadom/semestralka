@@ -18,10 +18,6 @@ if (isset($_POST['meno']) && isset($_POST['heslo']) ) {
 }
 ?>
 
-<html>
-<title>Prihlásenie</title>
-
-<body>
 <div class="karta" style="text-align: center">
     <form id="login" method="post">
         <label>Meno: <input required name="meno" style="margin: 10px" type="text"></label><br>

@@ -19,12 +19,8 @@ if (isset($_POST['registracia'])) {
 }
 
 ?>
-
-    <html>
-        <title>Registrácia</title>
-    <body>
         <div class="mx-auto text-center ">
-                <form id="registracia" method="post">
+                <form method="post">
                     <label>Login: <input required name="login" style="margin: 10px" type="text"></label><br>
                     <label>Meno a priezvisko: <input required name="menoAPriezvisko" style="margin: 10px" type="text"></label><br>
                     <label>E-mail: <input required name="email" style="margin: 10px" type="email"></label><br>

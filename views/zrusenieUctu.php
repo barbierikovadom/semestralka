@@ -22,10 +22,6 @@ if(isset($_POST['heslo'])) {
     }
 }
 ?>
-
-<html>
-<title>Zmazanie účtu</title>
-<body>
 <div class="container telo" id="telo">
     <h2 class="zrusenie text-center">
         <br>

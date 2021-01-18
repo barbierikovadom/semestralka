@@ -45,7 +45,7 @@ if (isset($_POST['funkcia'])) {
 }
 ?>
 <div class="container telo" id="telo" >
-                <form id="priadajPrvok " style="text-align: center">
+                <form style="text-align: center">
                     <br>
                     <label>Obrazok: <input type="text" id="obrazok" name="obrazok"></label>
                     <br>
@@ -56,7 +56,7 @@ if (isset($_POST['funkcia'])) {
                     <input class='btn btn-success' id='pridaj' name='pridaj' type='button' value='Pridaj' onclick='vytvorPrvok()'>
                     <br>
                 </form>
+</div>
 
-<script src="../ajax.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-
+</body>
+</html>

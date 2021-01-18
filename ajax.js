@@ -1,7 +1,7 @@
 function tmavyRezim() {
     document.getElementById("telo").style.backgroundColor = "#000000";
     document.getElementById("telo").style.color = "#ffffff";
-    pohare = document.getElementsByName("obrazok");
+    pohare = document.getElementsByClassName("obrazok");
     for (i = 0; i < pohare.length; i++) {
        pohare[i].style.backgroundColor = "#ffffff";
     }

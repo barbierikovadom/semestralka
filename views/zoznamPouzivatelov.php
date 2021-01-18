@@ -14,9 +14,6 @@ if($_SESSION['meno'] == null){
     include 'headAdmin.php';
 }
 $databaza = new databaza();
-
-echo "</table>";
-echo "</div>";
 ?>
 <div class="container telo">
             <table class="table">
@@ -36,3 +33,6 @@ echo "</div>";
                             ?>
             </table>
 </div>
+
+</body>
+</html>
