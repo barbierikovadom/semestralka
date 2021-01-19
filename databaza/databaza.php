@@ -55,11 +55,17 @@ class databaza
     }
 
     function odstranenieUctu($login){
-        if( $stmt = $this->pripojenie->prepare("DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
-            $stmt->bind_param("s", $login);
+        $id = $this->najdiPouzivatela($login);
+        if( $stmt = $this->pripojenie->prepare("DELETE FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
+            $stmt->bind_param("i", $id);
             $stmt->execute();
             $stmt->close();
-            return true;
+            if ($stmt1 = $this->pripojenie->prepare("DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+                $stmt1->bind_param("s", $login);
+                $stmt1->execute();
+                $stmt1->close();
+                return true;
+            }
         }
         return false;
     }
@@ -102,7 +108,7 @@ class databaza
         $prvky = [];
         if($login == 'admin'){
             $stmt = $this->pripojenie->query("SELECT rezervacia.id, login, menoAPriezvisko, datum, pocetOsob FROM semestralka.pouzivatelia JOIN semestralka.rezervacia
-            ON semestralka.rezervacia.idPouzivatela = semestralka.pouzivatelia.id ");
+            ON semestralka.rezervacia.idPouzivatela = semestralka.pouzivatelia.idPouzivatela ");
             while ($riadok = $stmt->fetch_assoc()) {
                 $prvok = new PrvokRezervacie($riadok['id'],$riadok['login'], $riadok['menoAPriezvisko'], $riadok['datum'], $riadok['pocetOsob']);
                 $prvky[] = $prvok;
@@ -159,7 +165,7 @@ class databaza
     }
 
     function najdiPouzivatela($login){
-        if( $stmt = $this->pripojenie->prepare("SELECT id FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+        if( $stmt = $this->pripojenie->prepare("SELECT idPouzivatela FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
             $stmt->bind_param("s", $login);
             $stmt->execute();
 
@@ -167,7 +173,7 @@ class databaza
 
             $id = null;
             while ($row = $result->fetch_assoc()) {
-                $id = $row['id'];
+                $id = $row['idPouzivatela'];
             }
 
             $stmt->close();
