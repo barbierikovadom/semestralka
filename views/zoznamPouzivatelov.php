@@ -26,7 +26,7 @@ $databaza = new databaza();
                 <?php
                 foreach ($databaza->nacitajVsetkychPouzivatelov() as $pouzivatel) {
                     echo "<tr class='table menu'>";
-                    echo "<td>" . $pouzivatel->getKrsneMeno() . "</td>";
+                    echo "<td>" . $pouzivatel->getLogin() . "</td>";
                     echo "<td>" . $pouzivatel->getPriezvisko() . "</td>";
                     echo "<td>" . $pouzivatel->getEmail() . "</td>";
                     echo "</tr>";

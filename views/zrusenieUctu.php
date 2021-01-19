@@ -12,8 +12,9 @@ $prihlasenyPouzivatel = $databaza->prihlasenie($_POST['meno'])->fetch_assoc();
 if(isset($_POST['heslo'])) {
     $hesloDatabaza = $prihlasenyPouzivatel['heslo'];
     if (password_verify($_POST['heslo'], $hesloDatabaza)) {
-        $databaza->odstranenieUctu($_POST['meno']);
-        header("LOCATION: registracia.php");
+        if($databaza->odstranenieUctu($_POST['meno'])){
+            header("LOCATION: registracia.php");
+        }
         unset($_SESSION['meno']);
         session_destroy();
     }

@@ -3,14 +3,14 @@
 
 class Pouzivatel
 {
-    private $krsneMeno;
+    private $login;
     private $priezvisko;
     private $email;
     private $heslo;
 
-    public function __construct($krsneMeno, $priezvisko, $email, $heslo)
+    public function __construct($login, $priezvisko, $email, $heslo)
     {
-        $this->krsneMeno = $krsneMeno;
+        $this->login = $login;
         $this->priezvisko = $priezvisko;
         $this->email = $email;
         $this->heslo = $heslo;
@@ -19,9 +19,9 @@ class Pouzivatel
     /**
      * @return mixed
      */
-    public function getKrsneMeno()
+    public function getLogin()
     {
-        return $this->krsneMeno;
+        return $this->login;
     }
 
     /**

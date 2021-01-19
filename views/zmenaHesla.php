@@ -13,7 +13,7 @@ $_POST['meno'] = $_SESSION['meno'];
 $pouzivatel = $databaza->nacitajPouzivatela($_POST['meno']);
 echo "<div class='container telo' style='text-align: center'>";
 echo "<br>";
-echo "<p> LOGIN : " . $pouzivatel->getKrsneMeno().  "</p>";
+echo "<p> LOGIN : " . $pouzivatel->getLogin().  "</p>";
 echo "<p> Meno a Priezvisko : " . $pouzivatel->getPriezvisko() . "</p>";
 echo "<p>  EMAIL : ". $pouzivatel->getEmail() . " </p>";
 echo "<br>";

@@ -55,17 +55,21 @@ class databaza
     }
 
     function odstranenieUctu($login){
-        $id = $this->najdiPouzivatela($login);
-        if( $stmt = $this->pripojenie->prepare("DELETE FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
-            $stmt->bind_param("i", $id);
-            $stmt->execute();
-            $stmt->close();
-            if ($stmt1 = $this->pripojenie->prepare("DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
-                $stmt1->bind_param("s", $login);
-                $stmt1->execute();
-                $stmt1->close();
-                return true;
+        if($login != 'admin') {
+            $id = $this->najdiPouzivatela($login);
+            if ($stmt = $this->pripojenie->prepare("DELETE FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
+                $stmt->close();
+                if ($stmt1 = $this->pripojenie->prepare("DELETE FROM semestralka.pouzivatelia WHERE semestralka.pouzivatelia.login = ?")) {
+                    $stmt1->bind_param("s", $login);
+                    $stmt1->execute();
+                    $stmt1->close();
+                    return true;
+                }
             }
+        } else {
+            echo "<h2> Tento účet nie je možné odstrániť </h2>";
         }
         return false;
     }
