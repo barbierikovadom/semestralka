@@ -5,9 +5,15 @@ function tmavyRezim() {
     for (i = 0; i < pohare.length; i++) {
        pohare[i].style.backgroundColor = "#ffffff";
     }
+    bunkyTabulky = document.getElementsByTagName("td");
+    for(i = 0, j = bunkyTabulky.length; i < j; ++i)
+        bunkyTabulky[i].style.color = "#ffffff";
+    nazvyStlcov = document.getElementsByTagName("th");
+    for(i = 0, j = nazvyStlcov.length; i < j; ++i)
+        nazvyStlcov[i].style.color = "#DAA520";
 }
 
-function odstranPrvokMenu(element) {
+function odstranPrvok(element) {
     var vymazanyPrvok = element;
     var answer = confirm ("Are you sure?");
     if (answer){
@@ -18,7 +24,7 @@ function odstranPrvokMenu(element) {
                 funkcia: 'odstranPrvok',
                 vymazannyPrvok: vymazanyPrvok,
             }
-        }).done(function (data) {
+        }).done(function () {
             setInterval(refreshPage(), 2000);
         });
     }
@@ -36,8 +42,8 @@ function vytvorPrvok() {
             obrazok: obrazok,
             nazovPiva: nazovPiva,
             typPiva : typPiva,
-        },
-    }).done(function (data) {
+        }
+    }).done(function () {
         $('#obrazok').val("");
         $('#nazovPiva').val("");
         $('#typPiva').val("");

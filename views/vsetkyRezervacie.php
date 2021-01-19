@@ -25,6 +25,13 @@ if (isset($_POST['vytvorenieRezervacie'])) {
     $pocetOsob = $_POST['pocetOsob'];
     $databaza->vytvorenieRezervacie($idPouzivatela, $datum, $pocetOsob);
 }
+
+if (isset($_POST['funkcia'])) {
+    if($_POST['funkcia'] === 'odstranPrvok' ){
+        $databaza->vymazRezervaciu($_POST['vymazannyPrvok']);
+        return;
+    }
+}
 ?>
 <div class="container nadpis">
     <h1 class="nadpis text-center">
@@ -36,7 +43,6 @@ if (isset($_POST['vytvorenieRezervacie'])) {
     if ($_POST['meno'] != 'admin') {
     ?>
         <br>
-        <div class="mx-auto text-center ">
             <form method="post">
                 <label class="col-sm-2 col-form-label" >Dátum</label>
                 <input type="date" id="datum" name="datum" min=<?php echo date("Y-m-d"); ?> max=<?php echo date('Y-m-d', strtotime('+2 years')); ?>>
@@ -48,7 +54,6 @@ if (isset($_POST['vytvorenieRezervacie'])) {
             </form>
             <br>
             <br>
-        </div>
     <?php }?>
     <table class="table">
         <?php
@@ -61,11 +66,10 @@ if (isset($_POST['vytvorenieRezervacie'])) {
             <th>Počet osôb</th>
         </tr>
         <?php } else { ?>
-
-
         <tr class="tabulka">
             <th>Dátum stretnutia</th>
             <th>Počet osôb</th>
+            <th>Zmaž</th>
         </tr>
         <?php }
             foreach ($databaza->nacitajRezervacie($_POST['meno']) as $prvok) {
@@ -81,13 +85,16 @@ if (isset($_POST['vytvorenieRezervacie'])) {
                     echo "<tr class='rezervacie'>";
                     echo "<td>" . $prvok->getDatum() . "</td>";
                     echo "<td>" . $prvok->getPocetOsob() . "</td>";
+                    if($prvok->getDatum() > date("Y-m-d")) {
+                        echo "<td><button class='delete' id=" . $prvok->getId() . " onclick='odstranPrvok(" . $prvok->getId() . ")'>Zmaz</button></td>";
+                    } else {
+                        echo "<td></td>";
+                    }
                     echo "</tr>";
                 }
             }
         ?>
-</table>
+    </table>
 </div>
-</body>
-</html>
 
 

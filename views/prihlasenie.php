@@ -13,6 +13,8 @@ if (isset($_POST['meno']) && isset($_POST['heslo']) ) {
         if (password_verify($_POST['heslo'], $hesloDatabaza)) {
             $_SESSION['meno'] = $_POST['meno'];
             header("LOCATION: uvodna_strana.php");
+        } else {
+            echo "<h2> Nesprávne heslo</h2>";
         }
     }
 }
@@ -27,6 +29,3 @@ if (isset($_POST['meno']) && isset($_POST['heslo']) ) {
     <span class="registrovanie">Nemáte prihlasovacie meno a heslo?</span>
     <a class="registrovanie" href="registracia.php">Zaregistrujte sa!</a>
 </div>
-
-</body>
-</html>

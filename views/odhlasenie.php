@@ -16,7 +16,3 @@ session_destroy();
     <h3 class="text-center"> Prajete si opäť sa prihlásiť? </h3>
     <h3><a class="linka" href='prihlasenie.php'>Prihláste sa!</a></h3>
 </div>
-
-
-</body>
-</html>

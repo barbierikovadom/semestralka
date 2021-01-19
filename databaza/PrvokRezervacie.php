@@ -3,17 +3,27 @@
 
 class PrvokRezervacie
 {
+    private $id;
     private $meno;
     private $priezvisko;
     private $datum;
     private $pocetOsob;
 
-    public function __construct($meno = null, $priezvisko = null, $datum, $pocetOsob)
+    public function __construct($id,$meno = null, $priezvisko = null, $datum, $pocetOsob)
     {
+        $this->id=$id;
         $this->meno = $meno;
         $this->priezvisko = $priezvisko;
         $this->datum = $datum;
         $this->pocetOsob = $pocetOsob;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -25,27 +35,11 @@ class PrvokRezervacie
     }
 
     /**
-     * @param mixed $datum
-     */
-    public function setDatum($datum): void
-    {
-        $this->datum = $datum;
-    }
-
-    /**
      * @return mixed
      */
     public function getPocetOsob()
     {
         return $this->pocetOsob;
-    }
-
-    /**
-     * @param mixed $pocetOsob
-     */
-    public function setPocetOsob($pocetOsob): void
-    {
-        $this->pocetOsob = $pocetOsob;
     }
 
     /**

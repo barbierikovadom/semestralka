@@ -34,11 +34,12 @@ class databaza
             $result = $stmt->get_result();
 
             if ($result->num_rows === 0) {
-                echo "Pouzivatel nenajdeny!";
+                echo "<h2> Používateľ nenájdený! </h2>";
             }
             $stmt->close();
             return $result;
         }
+        return null;
     }
 
     function zmenaHesla($login, $heslo){
@@ -90,7 +91,7 @@ class databaza
                     $this->registracia($login, $priezvisko, $email, $heslo);
                     $stmt1->close();
                 } else {
-                    echo "Uzivatel s danym menom uz existuje";
+                    echo  "<h2> Užívateľ s daným loginom alebo emailom už existuje </h2>";
                 }
             }
             $stmt->close();
@@ -100,24 +101,22 @@ class databaza
     function nacitajRezervacie($login){
         $prvky = [];
         if($login == 'admin'){
-            $stmt = $this->pripojenie->query("SELECT login, menoAPriezvisko, datum, pocetOsob FROM semestralka.pouzivatelia JOIN semestralka.rezervacia
+            $stmt = $this->pripojenie->query("SELECT rezervacia.id, login, menoAPriezvisko, datum, pocetOsob FROM semestralka.pouzivatelia JOIN semestralka.rezervacia
             ON semestralka.rezervacia.idPouzivatela = semestralka.pouzivatelia.id ");
             while ($riadok = $stmt->fetch_assoc()) {
-                $prvok = new PrvokRezervacie($riadok['login'], $riadok['menoAPriezvisko'], $riadok['datum'], $riadok['pocetOsob']);
+                $prvok = new PrvokRezervacie($riadok['id'],$riadok['login'], $riadok['menoAPriezvisko'], $riadok['datum'], $riadok['pocetOsob']);
                 $prvky[] = $prvok;
             }
         } else {
             $id = $this->najdiPouzivatela($login);
-
             if ($id != null) {
-
-                if( $stmt = $this->pripojenie->prepare("SELECT datum, pocetOsob FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
+                if( $stmt = $this->pripojenie->prepare("SELECT rezervacia.id, datum, pocetOsob FROM semestralka.rezervacia WHERE semestralka.rezervacia.idPouzivatela = ?")) {
                     $stmt->bind_param("i", $id);
                     $stmt->execute();
 
                     $result = $stmt->get_result();
                     while ($row = $result->fetch_assoc()) {
-                        $prvok = new PrvokRezervacie(null, null, $row['datum'], $row['pocetOsob']);
+                        $prvok = new PrvokRezervacie($row['id'],null, null, $row['datum'], $row['pocetOsob']);
                         $prvky[] = $prvok;
                     }
                     $stmt->close();
@@ -125,6 +124,14 @@ class databaza
             }
         }
         return $prvky;
+    }
+
+    function vymazRezervaciu($vymazanyPrvok){
+        if( $stmt = $this->pripojenie->prepare("DELETE from semestralka.rezervacia WHERE  id = ?")) {
+            $stmt->bind_param("i", $vymazanyPrvok);
+            $stmt->execute();
+            $stmt->close();
+        }
     }
 
     function vytvorenieRezervacie($idPouzivatela, $datum, $pocetOsob){
@@ -166,6 +173,7 @@ class databaza
             $stmt->close();
             return $id;
         }
+        return null;
     }
 
     function nacitajPouzivatela($login){
@@ -175,13 +183,13 @@ class databaza
 
                 $result = $stmt->get_result();
 
-
                 while ($row = $result->fetch_assoc()) {
                     $pouzivatel = new Pouzivatel($row['login'], $row['menoAPriezvisko'], $row['email'], $row['heslo']);
                 }
                 $stmt->close();
                 return $pouzivatel;
             }
+            return null;
         }
 
     function nacitajVsetkychPouzivatelov(){
@@ -190,8 +198,6 @@ class databaza
             while ($riadok = $stmt->fetch_assoc()) {
                 $pouzivatel = new Pouzivatel($riadok['login'], $riadok['menoAPriezvisko'], $riadok['email'], $riadok['heslo']);
                 $pouzivatelia[] = $pouzivatel;
-
-
             }
         return $pouzivatelia;
     }

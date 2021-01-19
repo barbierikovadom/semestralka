@@ -32,16 +32,6 @@ class PrvokMenu
         return $this->id;
     }
 
-
-
-    /**
-     * @param mixed $obrazok
-     */
-    public function setObrazok($obrazok): void
-    {
-        $this->obrazok = $obrazok;
-    }
-
     /**
      * @return mixed
      */
@@ -51,28 +41,11 @@ class PrvokMenu
     }
 
     /**
-     * @param mixed $nazovPiva
-     */
-    public function setNazovPiva($nazovPiva): void
-    {
-        $this->nazovPiva = $nazovPiva;
-    }
-
-    /**
      * @return mixed
      */
     public function getTypPiva()
     {
         return $this->typPiva;
     }
-
-    /**
-     * @param mixed $typPiva
-     */
-    public function setTypPiva($typPiva): void
-    {
-        $this->typPiva = $typPiva;
-    }
-
 
 }

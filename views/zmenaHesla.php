@@ -33,6 +33,3 @@ if(isset($_POST['heslo'])) {
         <input type="submit">
     </form>
 </div>
-
-</body>
-</html>

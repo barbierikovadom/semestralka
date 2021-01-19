@@ -42,6 +42,3 @@ if(isset($_POST['heslo'])) {
     </form>
     <br>
 </div>
-
-</body>
-</html>

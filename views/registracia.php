@@ -28,5 +28,3 @@ if (isset($_POST['registracia'])) {
                     <input type="submit" class="btn btn-success" id="registracia" name="registracia" value="Zaregistruj">
                 </form>
         </div>
-    </body>
-</html>

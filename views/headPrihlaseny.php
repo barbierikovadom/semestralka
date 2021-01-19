@@ -9,7 +9,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@800&amp;display=swap" rel="stylesheet">
 
-
     <link rel="stylesheet" href="../hlavne.css">
     <title> Piváreň u nás </title>
 </head>
@@ -39,9 +38,9 @@
 <!--menu-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="#">
-        <img src="../images/logo.png" width="35" height="35" alt="" loading="lazy">
+        <img src="../images/logo.png" width="35" height="35" alt="">
     </a>
-    <a class="navbar-brand nazov" href="uvodna_strana.html">Piváreň u nás</a>
+    <a class="navbar-brand nazov" href="uvodna_strana.php">Piváreň u nás</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,7 +56,7 @@
                 <a class="nav-link" href="menu.php">Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="kontakt.php">Kontakt</a>
+                <a class="nav-link" href="Kontakt.php">Kontakt</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="vsetkyRezervacie.php">Všetky rezervácie</a>

@@ -25,27 +25,11 @@ class Pouzivatel
     }
 
     /**
-     * @param mixed $krsneMeno
-     */
-    public function setKrsneMeno($krsneMeno): void
-    {
-        $this->krsneMeno = $krsneMeno;
-    }
-
-    /**
      * @return mixed
      */
     public function getPriezvisko()
     {
         return $this->priezvisko;
-    }
-
-    /**
-     * @param mixed $priezvisko
-     */
-    public function setPriezvisko($priezvisko): void
-    {
-        $this->priezvisko = $priezvisko;
     }
 
     /**
@@ -55,30 +39,5 @@ class Pouzivatel
     {
         return $this->email;
     }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email): void
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeslo()
-    {
-        return $this->heslo;
-    }
-
-    /**
-     * @param mixed $heslo
-     */
-    public function setHeslo($heslo): void
-    {
-        $this->heslo = $heslo;
-    }
-
 
 }

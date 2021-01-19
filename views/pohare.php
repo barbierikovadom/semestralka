@@ -157,6 +157,3 @@ if($_SESSION['meno'] == null){
     </div>
 </div>
 </div>
-
-</body>
-</html>
